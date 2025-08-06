@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #050505;
+    --green: #99e11f;
+    --yellow: #f6e133;
+    --white: #ffffff;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    background-color: var(--black);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 3D Background Canvas */
+#three-js-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.85;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Units Section */
+.units {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.units h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.5em;
+    color: #f7df3a;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(247, 223, 58, 0.8);
+    margin-top: 60px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.unit-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.unit-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.unit-card {
+    position: relative;
+    background: var(--black);
+    width: 300px;
+    height: 450px;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: background 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.unit-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.unit-card:hover {
+    background: transparent;
+}
+
+.unit-card::before,
+.unit-card::after {
+    position: absolute;
+    width: 104%;
+    height: 102%;
+    top: -1%;
+    left: -2%;
+    content: "";
+    border-radius: 6px;
+    background-image: linear-gradient(var(--rotate), var(--yellow), var(--green));
+    z-index: -1;
+    transition: opacity 0.5s;
+    animation: none;
+    opacity: 0;
+}
+
+.unit-card::after {
+    filter: blur(40px);
+}
+
+.unit-card:hover::before,
+.unit-card:hover::after {
+    opacity: 1;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { --rotate: 0deg; }
+    100% { --rotate: 360deg; }
+}
+
+.unit-card img:nth-child(1) {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+    border-radius: 6px;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.unit-card:hover img:nth-child(1) {
+    opacity: 0;
+}
+
+.unit-card img:nth-child(2) {
+    position: absolute;
+    bottom: 0%;
+    width: 150%;
+    left: 0%;
+    transform: translateX(-25%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.unit-card:hover img:nth-child(2) {
+    opacity: 1;
+}
+
+.unit-card .content {
+    position: absolute;
+    font-family: 'Sacramento', cursive;
+    color: var(--white);
+    top: 70%;
+    left: -10px;
+    rotate: -10deg;
+    text-shadow: 0 0 10px var(--green);
+    transition: color 0.5s, text-shadow 0.5s;
+}
+
+.unit-card:hover .content {
+    color: var(--yellow);
+    text-shadow: 0 0 10px var(--yellow);
+}
+
+.unit-card .content .name {
+    font-size: 40px;
+    margin-bottom: 15px; /* Added spacing between name and fullName */
+}
+
+.unit-card .content .fullName {
+    font-size: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .unit-card {
+        width: 250px;
+        height: 375px;
+    }
+
+    .unit-card img:nth-child(1) {
+        width: 96%;
+        height: 96%;
+    }
+
+    .unit-card img:nth-child(2) {
+        width: 150%;
+    }
+
+    .unit-card .content .name {
+        font-size: 32px;
+        margin-bottom: 12px; /* Adjusted spacing for smaller screens */
+    }
+
+    .unit-card .content .fullName {
+        font-size: 24px;
+    }
+
+    .units h2 {
+        font-size: 2rem;
+    }
+} 
+
+.navbar {
+    background: linear-gradient(180deg, rgba(115, 109, 40, 0.9), transparent);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand img {
+    height: 45px;
+    filter: brightness(1.3);
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    padding: 10px 15px;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.2s;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f7df3a;
+    text-shadow: 0 0 5px #f7df3a;
+    transform: translateY(-2px);
+}
