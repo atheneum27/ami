@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Aktivis Markaz Islami</title>
+    <meta name="description" content="Aktivis Markaz Islami - Berjihad | Berkarya | Bersinergi dalam Dakwah">
+    <meta name="author" content="Aktivis Markaz Islami">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="three-js-canvas"></canvas>
+
+    <!-- Audio Player -->
+    <div class="audio-player" id="audio-player">
+        <audio controls autoplay loop>
+            <source src="https://media.vocaroo.com/mp3/1hmNnJelspl3" type="audio/mpeg">
+        </audio>
+        <button class="delete-audio" onclick="hideAudioPlayer()">✖</button>
+    </div>
+
+    <!-- Arknights-inspired Loader -->
+    <div class="loader-layer" id="loader">
+        <div class="loader">
+            <img src="https://iili.io/FvCQbdF.md.png" class="loader-logo">
+            <div class="bar">
+                <div class="bar-progress" id="progress-bar"></div>
+            </div>
+            <div class="tips" id="loading-tip"></div>
+            <div class="tip-subtext" id="loading-subtext"></div>
+        </div>
+    </div>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img src="https://iili.io/FvCQbdF.md.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ranking">Ranking</a> <!-- New link -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#journey">Journey</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#units">Units</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Garasi</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+    <div class="hero-content">
+        <h1>Aktivis Markaz Islami</h1>
+        <p class="typing-animation">Berjihad | Berkarya | Bersinergi dalam Dakwah</p>
+    </div>
+</section>
+
+<!-- Ranking Section -->
+<section class="ranking" id="ranking">
+    <h2>Top 3 Ranking</h2>
+    <div class="ranking-column">
+        <div class="rank-card">
+            <div class="rank-position" data-rank="1">1</div>
+            <h3></h3>
+            <p class="rank-desc"></p>
+            <div class="rank-score">Score: </div>
+        </div>
+        <div class="rank-card">
+            <div class="rank-position" data-rank="2">2</div>
+            <h3></h3>
+            <p class="rank-desc"></p>
+            <div class="rank-score">Score: </div>
+        </div>
+        <div class="rank-card">
+            <div class="rank-position" data-rank="3">3</div>
+            <h3></h3>
+            <p class="rank-desc"></p>
+            <div class="rank-score">Score: </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Video Section -->
+    <section class="video-section" id="journey"> <!-- Added id="journey" -->
+        <h2></h2>
+        <div class="video-container">
+          <video controls>
+            <source src="https://files.catbox.moe/7hy7mf.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <h2>Our Vision</h2>
+            <p>
+                Menjadikan AMI SMA IT Nur Hidayah sebagai organisasi dakwah yang islami, profesional dan berintegritas dalam bingkai ukhuah <i>islamiyah</i> berlandaskan Al-Qur'an dan <i>As-Sunah</i>
+            </p>
+            <h2>Our Missions</h2>
+            <ol>
+                <li>Mengoptimalkan pembinaan Pengurus AMI SMA IT Nur Hidayah.</li>
+                <li>Meningkatkan profesionalitas kerja AMI SMA IT Nur Hidayah.</li>
+                <li>Mengelola dakwah dan syiar AMI SMA IT Nur Hidayah yang kreatif, efektif dan inovatif.</li>
+                <li>Memakmurkan Masjid Samsul Arifin Madjid dan Masjid Syaikhoh Ummu Abdillah.</li>
+                <li>Membentuk dan menjaga nuansa islami di lingkungan AMI SMA IT Nur Hidayah.</li>
+                <li>Memperkuat ukhuah <i>islamiyah</i> Pengurus AMI SMA IT Nur Hidayah.</li>
+            </ol>
+        </div>
+    </section>
+
+<section class="units" id="units">
+    <h2>Our Units</h2>
+    <div class="unit-controls">
+        <button class="unit-nav-button unit-nav-left">◄</button>
+        <div class="unit-slider" style="--quantity: 8">
+            <div class="unit-card" style="--position: 1">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=Pembina">
+                        <h3>Pembina</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Pembina</h3>
+                        <p>...</p>
+                        <a class="card-button" href="members.html?unit=pembina">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 2">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=Rois+Roisah">
+                        <h3>Rois Roisah</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Rois Roisah</h3>
+                        <p>...</p>
+                        <a class="card-button" href="members.html?unit=rois-roisah">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 3">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=Sekum">
+                        <h3>Sekretaris Umum</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Sekretaris Umum</h3>
+                        <p>Memanajemen administrasi organisasi.</p>
+                        <a class="card-button" href="members.html?unit=sekum">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 4">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=Bendum">
+                        <h3>Bendahara Umum</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Bendahara Umum</h3>
+                        <p>Mengatur cashflow organisasi.</p>
+                        <a class="card-button" href="members.html?unit=bendum">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 5">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="...">
+                        <h3>Pemberdayaan Sumber Daya Manusia</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Pemberdayaan Sumber Daya Manusia</h3>
+                        <p>Bertanggung jawab atas pengembangan skill dan kedekatan antar pengurus.</p>
+                        <a class="card-button" href="members.html?unit=psdm">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 6">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://iili.io/FvolvhN.th.png">
+                        <h3>Syiar dan Dakwah</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Syiar dan Dakwah</h3>
+                        <p>Menjadi sarana penyebaran dakwah dengan mengoptimalkan media sosial.</p>
+                        <a class="card-button" href="members.html?unit=syidak">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 7">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=D+K+M+A">
+                        <h3>Dewan Kemakmuran Masjid</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Dewan Kemakmuran Masjid</h3>
+                        <p>Bertanggung jawab atas kemakmuran masjid.</p>
+                        <a class="card-button" href="members.html?unit=dkma">View Members</a>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-card" style="--position: 8">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/200x300?text=J+W+R">
+                        <h3>Jasadiyah wa Ruhiyah</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Jasadiyah wa Ruhiyah</h3>
+                        <p>Berfokus pada peningkatan jasadiyah dan ruhiyah seluruh murid SMA IT Nur Hidayah.</p>
+                        <a class="card-button" href="members.html?unit=jwr">View Members</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="unit-nav-button unit-nav-right">►</button>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section class="events" id="events">
+    <h2>Our Programs</h2>
+    <h3>Sekretaris Umum</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 1: Organizational Meetings -->
+            <div class="event">
+                <h3>rapat kerja</h3>
+                <p class="event-date">August 1, 2025 - August 3, 2025</p>
+                <p class="event-desc">
+                    Join our interactive workshop to explore innovative teaching methods for Islamic education, designed for educators and parents.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Certificate of Participation</li>
+                        <li>Teaching Resource Kit</li>
+                        <li>Networking with Educators</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>masa orientasi ami</h3>
+                <p class="event-date">August 10, 2025</p>
+                <p class="event-desc">
+                    Participate in our annual charity event to support underprivileged families with educational supplies and basic necessities.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Free Educational Supplies</li>
+                        <li>Community Bonding Activities</li>
+                        <li>Volunteer Recognition</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>for sekretaris</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Bendahara Umum</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 2: Leadership & Governance -->
+            <div class="event">
+                <h3>syura pengurus harian lengkap</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>sidang pleno</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>sidang umum</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Pemberdayaan Sumber Daya Manusia</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 3: Community Outreach -->
+            <div class="event">
+                <h3>ami peduli</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>AMI Leadership Training</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>communication skills training</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Syiar dan Dakwah</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 4: Creative & Spiritual Development -->
+            <div class="event">
+                <h3>gemilang ami</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>halakah sighar</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>pelatihan desain</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Dewan Kemakmuran Masjid</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 5: Dakwah & Education -->
+            <div class="event">
+                <h3>rambu–rambu dakwah</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>ami curious</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>tarhib ramadhan</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Jasadiah wa Ruhiah</h3>
+    <div class="events-group">
+        <div class="events-grid">
+            <!-- Group 6: Religious Celebrations -->
+            <div class="event">
+                <h3>quran festival</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>piket rutin masjid</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>jumat berkah</h3>
+                <p class="event-date">August 20, 2025 - August 21, 2025</p>
+                <p class="event-desc">
+                    Celebrate the talents of our students with performances, exhibitions, and competitions showcasing their creativity and skills.
+                </p>
+                <div class="event-rewards">
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li>Awards for Top Performers</li>
+                        <li>Exclusive Merchandise</li>
+                        <li>Community Engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section (Garasi AMI) -->
+<section class="content-section" id="contact">
+    <div class="container">
+        <h2>Garasi AMI</h2>
+        <div class="contact-form">
+            <form id="contact-form" action="https://formspree.io/f/xpwljvyl" method="POST">
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="form-status" class="mt-3"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AMI SMAIT Nur Hidayah. All Rights Reserved.</p>
+            <p>Jalan Pandawa No.10, Dusun III, Kelurahan Pucangan, Kecamatan Kartasura, Sukoharjo, Jawa Tengah 57168</p>
+            <p>Contact: <a href="tel:"></a> | Email: <a href="ami.nurhid@gmail.com">ami.nurhid@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
