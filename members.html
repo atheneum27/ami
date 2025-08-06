@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card-Based Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="members.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="three-js-canvas"></canvas>
+
+    <section class="units" id="pembina" style="display: none;">
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name"></div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                <div class="unit-card" style="--position: 2">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name"></div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="units" id="rois-roisah" style="display: none;">
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name"></div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                <div class="unit-card" style="--position: 2">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name"></div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add sections for other units -->
+    <section class="units" id="sekum" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for Sekretaris Umum -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Alif</div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                   <div class="unit-card" style="--position: 1">
+       <img src="">
+       <img src="">
+       <div class="content">
+           <div class="name"></div>
+           <div class="fullName"></div>
+       </div>
+   </div>
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+                   <h2>Pengurus Harian Lengkap</h2>
+           <div class="unit-controls">
+               <div class="unit-slider" style="--quantity: 4">
+                   <!-- Add members for Sekum -->
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+    </section>
+
+    <section class="units" id="bendum" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for Bendahara Umum -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Rijal</div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                   <div class="unit-card" style="--position: 1">
+       <img src="">
+       <img src="">
+       <div class="content">
+           <div class="name"></div>
+           <div class="fullName"></div>
+       </div>
+   </div>
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+                   <h2>Pengurus Harian Lengkap</h2>
+           <div class="unit-controls">
+               <div class="unit-slider" style="--quantity: 4">
+                   <!-- Add members for Bendum -->
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+    </section>
+
+    <section class="units" id="psdm" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for PSDM -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Fathir</div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                  <div class="unit-card" style="--position: 1">
+      <img src="">
+      <img src="">
+      <div class="content">
+          <div class="name"></div>
+          <div class="fullName"></div>
+      </div>
+  </div>
+  
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+                   <h2>Pengurus Harian Lengkap</h2>
+           <div class="unit-controls">
+               <div class="unit-slider" style="--quantity: 4">
+                   <!-- Add members for PSDM -->
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+    </section>
+
+    <section class="units" id="syidak" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for Syiar dan Dakwah -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Yusuf</div>
+                        <div class="fullName">Yusuf Azzam Hafi</div>
+                    </div>
+                </div>
+                 <div class="unit-card" style="--position: 1">
+     <img src="">
+     <img src="">
+     <div class="content">
+         <div class="name">Fafa</div>
+         <div class="fullName"></div>
+     </div>
+ </div>
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+           <h2>Pengurus Harian Lengkap</h2>
+   <div class="unit-controls">
+       <div class="unit-slider" style="--quantity: 4">
+           <!-- Add members for Syiar dan Dakwah -->
+           <div class="unit-card" style="--position: 1">
+               <img src="">
+               <img src="">
+               <div class="content">
+                   <div class="name">Kei</div>
+                   <div class="fullName">Nidzar Hammam Ismath</div>
+               </div>
+           </div>
+           <div class="unit-card" style="--position: 1">
+               <img src="">
+               <img src="">
+               <div class="content">
+                   <div class="name">Fadly</div>
+                   <div class="fullName"></div>
+               </div>
+           </div>
+           <div class="unit-card" style="--position: 1">
+    <img src="">
+    <img src="">
+    <div class="content">
+        <div class="name">Iman</div>
+        <div class="fullName"></div>
+    </div>
+</div>
+<div class="unit-card" style="--position: 1">
+    <img src="">
+    <img src="">
+    <div class="content">
+        <div class="name"></div>
+        <div class="fullName"></div>
+    </div>
+</div>
+<div class="unit-card" style="--position: 1">
+    <img src="">
+    <img src="">
+    <div class="content">
+        <div class="name"></div>
+        <div class="fullName"></div>
+    </div>
+</div>
+<div class="unit-card" style="--position: 1">
+    <img src="">
+    <img src="">
+    <div class="content">
+        <div class="name"></div>
+        <div class="fullName"></div>
+    </div>
+</div>
+           <!-- Add more members as needed -->
+       </div>
+   </div>
+    </section>
+
+    <section class="units" id="dkma" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for DKM -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Umar</div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                   <div class="unit-card" style="--position: 1">
+       <img src="">
+       <img src="">
+       <div class="content">
+           <div class="name"></div>
+           <div class="fullName"></div>
+       </div>
+   </div>
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+                   <h2>Pengurus Harian Lengkap</h2>
+           <div class="unit-controls">
+               <div class="unit-slider" style="--quantity: 4">
+                   <!-- Add members for DKMA -->
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+    </section>
+
+    <section class="units" id="jwr" style="display: none;">
+        <h2>Pengurus Harian Tetap</h2>
+        <div class="unit-controls">
+            <div class="unit-slider" style="--quantity: 4">
+                <!-- Add members for JWR -->
+                <div class="unit-card" style="--position: 1">
+                    <img src="">
+                    <img src="">
+                    <div class="content">
+                        <div class="name">Ridho</div>
+                        <div class="fullName"></div>
+                    </div>
+                </div>
+                   <div class="unit-card" style="--position: 1">
+       <img src="">
+       <img src="">
+       <div class="content">
+           <div class="name">Arza</div>
+           <div class="fullName"></div>
+       </div>
+   </div>
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+                   <h2>Pengurus Harian Lengkap</h2>
+           <div class="unit-controls">
+               <div class="unit-slider" style="--quantity: 4">
+                   <!-- Add members for JWR -->
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+                   <div class="unit-card" style="--position: 1">
+                       <img src="">
+                       <img src="">
+                       <div class="content">
+                           <div class="name"></div>
+                           <div class="fullName"></div>
+                       </div>
+                   </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="members.js"></script>
+    <script>
+        // JavaScript to handle unit filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the unit parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const unit = urlParams.get('unit');
+
+            // Hide all sections by default
+            const sections = document.querySelectorAll('.units');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the section corresponding to the unit parameter
+            if (unit) {
+                const targetSection = document.getElementById(unit);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    // Scroll to the section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback: Show a default section or message if unit is invalid
+                    document.querySelector('.units').style.display = 'block';
+                }
+            } else {
+                // If no unit is specified, show a default section (e.g., Pembina)
+                document.getElementById('pembina').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
